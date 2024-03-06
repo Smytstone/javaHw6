@@ -46,11 +46,10 @@ public class StatsService {
     }
 
     public int minSalesUnderMid(long[] sales) {
-        int minMonths = 0; // номер месяца с минимальными продажами среди просмотренных ранее
+        int minMonths = 0;
+        long midSumDay = midSalesPerMonth(sales);
 
         for (int i = 0; i < sales.length; i++) {
-
-            int midSumDay = midSalesPerMonth(sales);
 
             if (sales[i] < midSumDay) {
                 minMonths += 1;
@@ -61,11 +60,10 @@ public class StatsService {
 }
 
     public int maxSalesAboveMid(long[] sales) {
-        int minMonths = 0; // номер месяца с минимальными продажами среди просмотренных ранее
+        int minMonths = 0;
+        long midSumDay = midSalesPerMonth(sales);
 
         for (int i = 0; i < sales.length; i++) {
-
-            int midSumDay = midSalesPerMonth(sales);
 
             if (sales[i] > midSumDay) {
                 minMonths += 1;
